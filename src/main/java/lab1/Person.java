@@ -1,34 +1,31 @@
 package lab1;
 
-public class Person {
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
+class Person {
+    String name;
+    String patronymic;
+    String lastName;
 
-    public Person() {
-    }
 
-    public Person(String firstName, String lastName, String phoneNumber) {
-        this.firstName = firstName;
+    Person(String name, String patronymic, String lastName) {
+        this.name = name;
+        this.patronymic = patronymic;
         this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+    public String getName() {
+        return name;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
     }
 
     public String getLastName() {
@@ -38,13 +35,4 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
 }
