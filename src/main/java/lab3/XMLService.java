@@ -1,5 +1,6 @@
 package lab3;
 
+import lab2.Categories;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 

@@ -18,6 +18,7 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
@@ -126,46 +127,47 @@ import java.util.TreeSet;
     libraryFromXML = XMLService.loadLibraryFromXML(xmlFile2);
     System.out.println(libraryFromXML);
 
-//    Book bookFound = XMLService.findBookByTitle(library, "Евгений Онегин");
-////    System.out.println(book);
-//    if (bookFound != null) {
-//      //изменнение параметров найденной книги
-//      bookFound.setPrice(600);
-//      bookFound.setDateOfPublishing("23.09.2016");
-//      System.out.println("Данные успешно обновлены");
-//    } else System.out.println("Книга с данными названием не найдена");
-//
-//    XMLService.saveLibraryData(library);
-//    libraryFromXML = XMLService.loadLibraryFromXML(xmlFile2);
-//    System.out.println(libraryFromXML);
-//
-//
-//    libraryFromXML = XMLService.loadLibraryFromXML(xmlFile);
-//    TreeSet<Book> setBooks = libraryFromXML.getBooks();
-//
-//
-//    for (Book bookEl : setBooks) {
-//      int count = 0;
-//      if (bookEl.getPrice() > 500) {
-//        System.out.println("У книги \"" + bookEl.getTitle() + "\" стоимость больше, чем 500 и сотоавляет " + bookEl.getPrice());
-//        count++;
-//      }
-//      if (count == 0) System.out.println("Нет книг c ценой больше 500");
-//
-//    }
-//
-//    List<Book> bookList = new ArrayList<>(setBooks);
-//
-//
-//    Collections.sort(bookList);
-////
-//    setBooks = new TreeSet<Book>(bookList);
-//
-//
-//    library.setBooks(setBooks);
-//    XMLService.saveLibraryData(library);
-//    libraryFromXML = XMLService.loadLibraryFromXML(xmlFile2);
-//    System.out.println(libraryFromXML);
+    Book bookFound = XMLService.findBookByTitle(library, "Евгений Онегин");
+    boolean book = false;
+    System.out.println(book);
+    if (bookFound != null) {
+      //изменнение параметров найденной книги
+      bookFound.setPrice(600);
+     bookFound.setDateOfPublishing("23.09.2016");
+      System.out.println("Данные успешно обновлены");
+    } else System.out.println("Книга с данными названием не найдена");
+
+    XMLService.saveLibraryData(library);
+    libraryFromXML = XMLService.loadLibraryFromXML(xmlFile2);
+    System.out.println(libraryFromXML);
+
+
+    libraryFromXML = XMLService.loadLibraryFromXML(xmlFile);
+    TreeSet<Book> setBooks = libraryFromXML.getBooks();
+
+
+    for (Book bookEl : setBooks) {
+      int count = 0;
+      if (bookEl.getPrice() > 500) {
+        System.out.println("У книги \"" + bookEl.getTitle() + "\" стоимость больше, чем 500 и сотоавляет " + bookEl.getPrice());
+        count++;
+      }
+      if (count == 0) System.out.println("Нет книг c ценой больше 500");
+
+    }
+
+   List<Book> bookList = new ArrayList<>(setBooks);
+
+
+    Collections.sort(bookList);
+
+    setBooks = new TreeSet<Book>(bookList);
+
+
+    library.setBooks(setBooks);
+    XMLService.saveLibraryData(library);
+    libraryFromXML = XMLService.loadLibraryFromXML(xmlFile2);
+    System.out.println(libraryFromXML);
 
   }
 }

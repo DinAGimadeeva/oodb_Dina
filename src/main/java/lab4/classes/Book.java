@@ -1,15 +1,21 @@
-package lab2;
+package lab4.classes;
 
+ import javax.xml.bind.annotation.XmlElement;
 import java.util.Objects;
 
-public class Book implements Comparable<Book> {
+ public class Book implements Comparable<Book> {
   private Section section;
   private String title;
   private Author author;
   private String dateOfPublishing;
   private double price;
 
-  Book(Section section, String title, Author author, String dateOfPublishing, double price) {
+  //пустой конструктор тк ругается при чтении из файла
+  //Class.forName( имя  класса).newInstance().
+  public Book() {
+  }
+
+ public Book(Section section, String title, Author author, String dateOfPublishing, double price) {
     this.section = section;
     this.title = title;
     this.author = author;
@@ -33,6 +39,8 @@ public class Book implements Comparable<Book> {
     this.title = title;
   }
 
+
+  @XmlElement(name = "author")
   Author getAuthor() {
     return author;
   }
@@ -86,9 +94,9 @@ public class Book implements Comparable<Book> {
     return Objects.hash(section, title, author, dateOfPublishing, price);
   }
 
-//метод для сравнения в сортировке
+  //метод для сравнения в сортировке
   @Override
   public int compareTo(Book o) {
-    return (int) (this.getPrice() - o.getPrice());
+    return (int) (this.getPrice()-o.getPrice());
   }
 }

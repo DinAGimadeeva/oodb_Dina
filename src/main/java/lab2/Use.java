@@ -5,13 +5,14 @@ import com.google.gson.Gson;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
 public class Use {
 
-
+  List<Categories> categories = new ArrayList<>();
   //запись в файл
   static void writeToFIle(String jsonLine) {
     try {
@@ -25,6 +26,15 @@ public class Use {
     }
   }
 
+  //поиск книги по автору
+  static Book findauthorByTitle(HashSet<Book> books, String searchTitle) {
+    Book result = null;
+    for (Book book : books) {
+      if (book.getAuthor().equals(searchTitle))
+        result = book;
+    }
+    return result;
+  }
 
   //поиск книги по названию
   static Book findBookByTitle(HashSet<Book> books, String searchTitle) {
@@ -83,5 +93,15 @@ public class Use {
       }
 
     }
+  }
+  public void getSortedCategories() {
+    List<String> out = new ArrayList<>();
+    for (int i = 0; i < categories.size(); i++) {
+      out.add(categories.get(i).name);
+    }
+    System.out.println("\n~ Сортированный список: ");
+    out.stream().sorted().forEach(s -> System.out.println(s));
+    System.out.println("\n~ Несортированный список: ");
+    out.stream().forEach(s -> System.out.println(s));
   }
 }
