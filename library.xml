@@ -15,18 +15,6 @@
         </book>
         <book>
             <author>
-                <lastName>Пушкин</lastName>
-                <name>Алексей</name>
-                <patronymic>Сергеевич</patronymic>
-                <info>Писатель, годы жизни 1799-1837</info>
-            </author>
-            <dateOfPublishing>19.09.2013</dateOfPublishing>
-            <price>349.8</price>
-            <section>CLASSIC</section>
-            <title>Евгений Онегин</title>
-        </book>
-        <book>
-            <author>
                 <lastName>Брэдбери</lastName>
                 <name>Рэй</name>
                 <patronymic></patronymic>
@@ -36,6 +24,18 @@
             <price>398.0</price>
             <section>CLASSIC</section>
             <title>451 градус по Фаренгейту</title>
+        </book>
+        <book>
+            <author>
+                <lastName>Пушкин</lastName>
+                <name>Алексей</name>
+                <patronymic>Сергеевич</patronymic>
+                <info>Писатель, годы жизни 1799-1837</info>
+            </author>
+            <dateOfPublishing>23.09.2016</dateOfPublishing>
+            <price>600.0</price>
+            <section>CLASSIC</section>
+            <title>Евгений Онегин</title>
         </book>
         <book>
             <author>
