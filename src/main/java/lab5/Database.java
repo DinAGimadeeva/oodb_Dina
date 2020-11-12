@@ -31,6 +31,8 @@ class Database {
     final String SQL_INPUT2 = "INSERT INTO authors (author) VALUES (ROW('Марк', '', 'Зусак','Писатель, годы жизни 1975-')) returning id";
     final String SQL_INPUT3 = "INSERT INTO books (book) VALUES (ROW('NOVEl', 'Книжный вор', '23.09.2016', 1243)) returning id";
     final String SQL_INPUT4 = "INSERT INTO books (book) VALUES (ROW('NOVEl','Война и мир','23.09.2018',1000)) returning id";
+    final String SQL_INPUT5 = "INSERT INTO section (section) VALUES (ROW(false,false,true,false,false,false)) returning id";
+    final String SQL_INPUT6 = "INSERT INTO person (person) VALUES (ROW('Динара','Айратовна','Гимадеева')) returning id";
     try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
          PreparedStatement preparedStatement = conn.prepareStatement(SQL_INPUT1)) {
 
@@ -62,6 +64,23 @@ class Database {
     } catch (SQLException e) {
       e.printStackTrace();
     }
+
+    try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+         PreparedStatement preparedStatement = conn.prepareStatement(SQL_INPUT5)) {;
+      ResultSet resultSet = preparedStatement.executeQuery();
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
+    try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+         PreparedStatement preparedStatement = conn.prepareStatement(SQL_INPUT6)) {;
+      ResultSet resultSet = preparedStatement.executeQuery();
+
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+
   }
 
 
